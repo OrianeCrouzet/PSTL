@@ -7,7 +7,7 @@ et réimplantation moderne du jeu Prince of Persia (1989).
 - Oriane CROUZET
 
 ### Choix d'implémentation
-Langage utilisé pour la réimplantation : C 
+Langage utilisé pour la réimplantation :  C 
 
 ## Objectifs 
 
