@@ -6,7 +6,7 @@ et réimplantation moderne du jeu Prince of Persia (1989).
 - Fatima AYED 
 - Oriane CROUZET
 
-### Choix d'implémentation
+#### Choix d'implémentation
 Langage utilisé pour la réimplantation :  C 
 
 ## Objectifs 
