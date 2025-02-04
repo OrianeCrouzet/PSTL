@@ -34,7 +34,6 @@ void extract_images(const char *filename) {
 
     uint8_t num_images;
     fread(&num_images, sizeof(uint8_t), 1, file);
-    //num_images = MAX_IMG;
     printf("Nombre d'images: %d\n", num_images);
 
     if (num_images == 0) {
@@ -61,16 +60,12 @@ void extract_images(const char *filename) {
         fseek(file, image_addresses[i], SEEK_SET);
         if (fseek(file, image_addresses[i], SEEK_SET) != 0) {
             perror("Erreur avec fseek");
-        } else {
-            printf("Position après fseek : 0x%04X\n", ftell(file));
+            continue;
         }
 
         uint8_t width, height;
         fread(&width, sizeof(uint8_t), 1, file);
-        //printf("Premier octet lu à cette adresse : 0x%02X\n", width);
         fread(&height, sizeof(uint8_t), 1, file);
-        //printf("Second octet lu à cette adresse : 0x%02X\n", height);
-        printf("Image %d - Width: %d (0x%02X), Height: %d (0x%02X)\n", i, width, width, height, height);
         printf("Image %d - Adresse: 0x%04X, Dimensions: %dx%d\n", i, image_addresses[i], width, height);
 
         if (width == 0 || height == 0 || width > 255 || height > 255) {
@@ -78,24 +73,8 @@ void extract_images(const char *filename) {
             continue;
         }
 
-    }
-
-    free(image_addresses);
-    fclose(file);
-}
-
-int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        fprintf(stderr, "Utilisation : %s <fichier binaire>\n", argv[0]);
-        return 1;
-    }
-
-    extract_images(argv[1]);
-    return 0;
-}
-
-/*
-* uint8_t *pixel_data = malloc(width * height);
+        /*
+        uint8_t *pixel_data = malloc(width * height);
         if (!pixel_data) {
             perror("Erreur d'allocation mémoire pour les pixels");
             continue;
@@ -128,3 +107,18 @@ int main(int argc, char *argv[]) {
         fclose(output);
         free(pixel_data);
  */
+    }
+
+    free(image_addresses);
+    fclose(file);
+}
+
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        fprintf(stderr, "Utilisation : %s <fichier binaire>\n", argv[0]);
+        return 1;
+    }
+
+    extract_images(argv[1]);
+    return 0;
+}
