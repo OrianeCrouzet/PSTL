@@ -17,7 +17,7 @@ int main() {
     
 
     // Ouvre le fichier en mode binaire
-    file = fopen("IMG.BGTAB1.DUN", "rb");
+    file = fopen("../images/IMG.BGTAB1.DUN", "rb");
 
     
     if (file == NULL) {
