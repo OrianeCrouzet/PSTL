@@ -17,7 +17,7 @@ int main() {
     
 
     // Ouvre le fichier en mode binaire
-    file = fopen("../images/IMG.BGTAB1.DUN", "rb");
+    file = fopen("../images/IMG.CHTAB1", "rb");
 
     
     if (file == NULL) {
@@ -83,7 +83,7 @@ int main() {
 
         printf("position temp vant soustraction: %02X\n", pos_temp);
 
-        pos_final=  pos_temp - 0x6000; 
+        pos_final=  pos_temp - 0x6000;
 
         printf("pos final en hexa %04X\n", pos_final);
         printf("pos final en deci %u\n", pos_final);
@@ -109,7 +109,7 @@ int main() {
                pos_ligne=pos_ligne+1;
                for (int bit = 0; bit < 7; bit++) {
                 // 1 pour pixel allumé, 0 our celui qui est eteint
-                   if (pixel & (1 << (6 - bit))) {
+                   if (pixel & (1 << ( bit))) {
                       printf("#");  
                       } else {
                       printf("."); 
