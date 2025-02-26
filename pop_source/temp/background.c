@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <SDL2/SDL.h>
 int main() {
     FILE *file;
 
@@ -17,7 +17,7 @@ int main() {
     
 
     // Ouvre le fichier en mode binaire
-    file = fopen("../images/IMG.CHTAB1", "rb");
+    file = fopen("IMG.BGTAB1.DUN", "rb");
 
     
     if (file == NULL) {
@@ -69,7 +69,7 @@ int main() {
 
     
 // commencer à lire les images
-   for (int i=0; i<nb_image; i++){
+   for (int i=0; i<4; i++){
 
         printf("image num  %u \n" ,i);
         bit_pds_faible= fichier[2*i +1];
@@ -83,7 +83,7 @@ int main() {
 
         printf("position temp vant soustraction: %02X\n", pos_temp);
 
-        pos_final=  pos_temp - 0x6000;
+        pos_final=  pos_temp - 0x6000; 
 
         printf("pos final en hexa %04X\n", pos_final);
         printf("pos final en deci %u\n", pos_final);
@@ -97,16 +97,15 @@ int main() {
      
        
 
-    unsigned short pos_ligne= pos_final+2; //position debut de chaque lignes
+    unsigned short pos_ligne= pos_final+2+((nb_lines-1)*nb_oct_par_ligne) ; 
 
     // Pour chaque ligne de l'image
-       for (int line_num = 0; line_num < nb_lines; line_num++) {
-
-           
+       for (int line_num = nb_lines-1; line_num >=0; line_num--) {
+          
         // Affiche les pixels de la ligne
            for (int byte = 0; byte < nb_oct_par_ligne; byte++) {
                pixel = fichier[pos_ligne];
-               pos_ligne=pos_ligne+1;
+               pos_ligne=pos_ligne +1;
                for (int bit = 0; bit < 7; bit++) {
                 // 1 pour pixel allumé, 0 our celui qui est eteint
                    if (pixel & (1 << ( bit))) {
@@ -117,6 +116,8 @@ int main() {
          }
           
      }
+
+     pos_ligne= pos_ligne - (2*nb_oct_par_ligne);
      printf("\n");
     }
    }
