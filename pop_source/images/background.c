@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL2/SDL.h>
+//#include <SDL2/SDL.h>
 int main() {
     FILE *file;
 
@@ -17,7 +17,7 @@ int main() {
     
 
     // Ouvre le fichier en mode binaire
-    file = fopen("IMG.BGTAB1.DUN", "rb");
+    file = fopen("IMG.BGTAB1.PAL", "rb");
 
     
     if (file == NULL) {

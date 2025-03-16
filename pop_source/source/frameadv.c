@@ -1643,7 +1643,7 @@ uint8_t GETINITOBJ() {
     default: // Si ce n'est pas un gadget
         return 0;
     }
-}
+} // end GETINITOBJ
 
 
 // *********************** Point d'entrée du programme pour tester ***********************
