@@ -2,13 +2,7 @@
 // Created by OrianeCrouzet on 26/02/2025.
 //
 
-#include "../utils/vars.h"
-#include "../utils/bgdata.h"
-
-//#include <SDL2/SDL.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include <stdio.h>
+#include "../utils/global.h"
 
 // Buffers de mise à jour (simulés)
 uint8_t wipebuf[30], redbuf[30], movebuf[30], floorbuf[30], halfbuf[30], objbuf[30], fredbuf[30], topbuf[30];

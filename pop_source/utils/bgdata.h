@@ -276,6 +276,5 @@ const uint8_t blockfr[2] = { 0x83, 0x83 };
 #define TYPE_GD 7
 #define USELAYRSAVE 4
 #define USELAY 5
-#define IDMASK 0x1F
 
 #endif //BGDATA_H

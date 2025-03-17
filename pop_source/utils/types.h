@@ -2,9 +2,8 @@
 // Created by OrianeCrouzet on 27/02/2025.
 //
 
-#include <stdint.h>
-#include <stdbool.h>
-#include <stdio.h>
+#include "global.h"
+
 #ifndef TYPES_H
 #define TYPES_H
 
@@ -20,5 +19,12 @@ typedef struct {
     uint8_t tab;    // Valeur spécifique à l'objet
     uint8_t index;  // Identifiant de l'objet
 } GameObject;
+
+typedef struct {
+    uint8_t imgL;
+    uint8_t imgH;
+    uint8_t x;
+    uint8_t y;
+} PeelEntry;
 
 #endif //TYPES_H
