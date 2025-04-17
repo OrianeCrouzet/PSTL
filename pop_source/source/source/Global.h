@@ -1,0 +1,17 @@
+#pragma once
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <SDL2/SDL.h>
+#include <stdbool.h>
+#include <SDL2/SDL_image.h> 
+#include "EQ.h"
+#include "Tables.h"
+#include "BGDATA.h"
+#include "MOVEDATA.h"
+#include "Grafix.h"
+#include "hires.h"
+#include "HRtables.h"
+#include "GameEQ.h"
+#include "FrameAdV.h"
+#include "GameBG.h"
