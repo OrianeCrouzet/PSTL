@@ -3,8 +3,8 @@
 et réimplantation moderne du jeu Prince of Persia (1989).
 
 ### Composition du groupe
-- Fatima AYED 
-- Oriane CROUZET
+- Fatima AYED     (fatima.ayed@etu.sorbonne-universite.fr)
+- Oriane CROUZET  (oriane.crouzet@etu.sorbonne-universite.fr)
 
 #### Choix d'implémentation
 Langage utilisé pour la réimplantation :  C 
